@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-//import styles from '@/styles/Home.module.css'
+import styles from '../styles/home.module.sass'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +17,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Link href="./clocks/digital">Digital</Link>
-        <br /><Link href="./clocks/analog">Analog</Link>
+        <div className={styles.content}>
+          <Link href="./clocks/digital" className={styles.links_1}>Digital</Link>
+          <Link href="./clocks/analog" className={styles.links_2}>Analog</Link>
+        </div>
       </main>
     </>
   )

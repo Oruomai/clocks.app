@@ -35,7 +35,7 @@ const Digital: React.FC = () => {
 
   return (
     <main>
-      <Link href="/">Home</Link>
+      <button className={styles.button}><Link href="/">Home</Link></button>
       <section className={styles.section}>
       <div className={`${styles.sec} ${styles.sec1}`}>
           <h2 id="hour">00</h2>

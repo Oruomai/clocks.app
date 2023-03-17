@@ -7,6 +7,7 @@ const Analog: React.FC = () => {
   return (
     <main className={styles.content}>
       <div className={styles.container}>
+        <button className={styles.button}><Link href="/">Home</Link></button>
         <div className={styles.box}></div>
       </div>
     </main>
