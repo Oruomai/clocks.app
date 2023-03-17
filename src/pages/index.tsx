@@ -18,6 +18,7 @@ export default function Home() {
       </Head>
       <main>
         <Link href="./clocks/digital">Digital</Link>
+        <br /><Link href="./clocks/analog">Analog</Link>
       </main>
     </>
   )

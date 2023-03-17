@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import styles from '../../styles/digital.module.sass'
 
 const Digital: React.FC = () => {
   useEffect(() => {
@@ -29,21 +30,21 @@ const Digital: React.FC = () => {
   
     var interval = setInterval(clock, 1000);
   
-    return () => clearInterval(interval); // cleanup
+    return () => clearInterval(interval);
   }, []);
 
   return (
     <main>
       <Link href="/">Home</Link>
-      <section id="section">
-        <div className="sec sec1">
+      <section className={styles.section}>
+      <div className={`${styles.sec} ${styles.sec1}`}>
           <h2 id="hour">00</h2>
           <h2 id="dot">:</h2>
           <h2 id="minutes">00</h2>
         </div>
-        <div className="sec sec2">
+        <div className={`${styles.sec} ${styles.sec2}`}>
           <h2 id="seconds">00</h2>
-          <span id="ampm">AM</span>
+          <span className={styles.ampm} id="ampm">AM</span>
         </div>
       </section>
     </main>
