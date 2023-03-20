@@ -17,9 +17,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className={styles.content}>
-          <Link href="./clocks/digital" className={styles.links_1}>Digital</Link>
-          <Link href="./clocks/analog" className={styles.links_2}>Analog</Link>
+        <div className={styles.container}>
+        <section className={styles.content}>
+            <p className={styles.logo_home}>clocks.app</p>
+            <h1 className={styles.heading_home}>The <span className={styles.heading_span}>#1</span><br />aesthetic <br />clock app <br />without Ads.</h1>
+            <p className={styles.paragraph_home}>An ever-growing catalogue of <br /> high-quality children's music <br /> sourced by talented music <br /> creators from all over the world.</p>
+        </section>
+        <section className={styles.content_2}>
+            <Link href="./clocks/digital" className={styles.links_1}>Digital</Link>
+            <Link href="./clocks/analog" className={styles.links_2}>Analog</Link>
+            <Link href="./timers/stopwatch" className={styles.links_3}>Stopwatch</Link>
+        </section>
         </div>
       </main>
     </>

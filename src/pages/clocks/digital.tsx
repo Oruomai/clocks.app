@@ -13,12 +13,14 @@ const Digital: React.FC = () => {
       fetch('http://worldtimeapi.org/api/ip')
         .then(response => response.json())
         .then(data => {
-          let timezone = data.timezone; // get the timezone
+          let timezone = data.timezone;
           let now = new Date(data.datetime);
           let localTime = now.toLocaleTimeString('en-US', { timeZone: timezone });
           let [h, m, s] = localTime.split(/:| /);
           let am = parseInt(h) < 12 ? "AM" : "PM";
           h = ((parseInt(h) % 12) || 12).toString();
+
+          h = (parseInt(h) < 10) ? "0" + h : h
   
           hours!.innerHTML = h;
           minutes!.innerHTML = m;
