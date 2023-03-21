@@ -21,13 +21,21 @@ export default function Home() {
         <section className={styles.content}>
             <p className={styles.logo_home}>clocks.app</p>
             <h1 className={styles.heading_home}>The <span className={styles.heading_span}>#1</span><br />aesthetic <br />clock app <br />without Ads.</h1>
-            <p className={styles.paragraph_home}>An ever-growing catalogue of <br /> high-quality children's music <br /> sourced by talented music <br /> creators from all over the world.</p>
+            <p className={styles.paragraph_home}>High performance and a sleek, 
+                                                <br />minimalist design without any ads,
+                                                <br />making it both aesthetically pleasing
+                                                <br />and efficient in terms of memory usage.</p>
         </section>
-        <section className={styles.content_2}>
-            <Link href="./clocks/digital" className={styles.links_1}>Digital</Link>
-            <Link href="./clocks/analog" className={styles.links_2}>Analog</Link>
-            <Link href="./timers/stopwatch" className={styles.links_3}>Stopwatch</Link>
-        </section>
+        <nav className={styles.content_2}>
+            <div className={styles.box_1}>
+              <Link href="./clocks/digital" className={styles.links_1}>DIGITAL</Link>
+            </div>
+            <div className={styles.box_2}>
+              <Link href="./clocks/analog" className={styles.links_2}>ANALOG</Link>
+            </div>
+              <Link href="./timers/stopwatch" className={styles.links_3}>STOPWATCH</Link>
+              <Link href="./timers/stopwatch" className={styles.links_4}>COUNTER</Link>
+        </nav>
         </div>
       </main>
     </>
