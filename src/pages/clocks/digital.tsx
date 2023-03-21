@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/digital.module.sass'
+import { ArrowLeft } from 'react-feather'
 
 const Digital: React.FC = () => {
   useEffect(() => {
@@ -37,7 +38,7 @@ const Digital: React.FC = () => {
 
   return (
     <main>
-      <button className={styles.button} data-feather="linkedin"><Link href="/"></Link></button>
+    <Link href="/"><div className={styles.button}><ArrowLeft /></div></Link>
       <section className={styles.section}>
       <div className={`${styles.sec} ${styles.sec1}`}>
           <h2 id="hour">00</h2>

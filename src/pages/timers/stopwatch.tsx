@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/stopwatch.module.sass'
+import { ArrowLeft } from 'react-feather'
 
 const Stopwatch: React.FC = () => {
 
   return (
     <main>
-      <button className={styles.button}><Link href="/">Home</Link></button>
+      <Link href="/"><div className={styles.button}><ArrowLeft /></div></Link>
       <section className={styles.section}>
       <div className={`${styles.sec} ${styles.sec1}`}>
           <h2 id="hour">00</h2>
