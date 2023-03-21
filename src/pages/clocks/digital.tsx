@@ -37,7 +37,7 @@ const Digital: React.FC = () => {
 
   return (
     <main>
-      <button className={styles.button}><Link href="/">Home</Link></button>
+      <button className={styles.button} data-feather="linkedin"><Link href="/"></Link></button>
       <section className={styles.section}>
       <div className={`${styles.sec} ${styles.sec1}`}>
           <h2 id="hour">00</h2>
