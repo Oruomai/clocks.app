@@ -1,7 +1,7 @@
 $primary_color: #adefd1ff
 $secondary_color: #00203fff
-
 $primary_font: 'Inter', sans-serif
+$border_px: 10px
 
 .container
     display: flex
@@ -26,128 +26,130 @@ $primary_font: 'Inter', sans-serif
     height: 100vh
     background: $secondary_color
 
+/* content_1 - START */
 .heading_home
     color: $secondary_color
     font-family: $primary_font
     font-size: 5vw
     font-weight: 1000
+    letter-spacing: -2px
     line-height: 1
     margin-bottom: 100px
     padding-left: 50px
-    letter-spacing: -2px
 
 .logo_home
     color: $secondary_color
     font-family: $primary_font
     font-size: 1.9vw
     font-weight: 1000
+    letter-spacing: -2px
     position: absolute
     top: 0
     left: 0
     padding-left: 50px
     padding-top: 50px
-    letter-spacing: -2px
-
-.heading_span
-    color: $secondary_color
 
 .paragraph_home
     color: $secondary_color
-    font-size: 1vw
     font-family: $primary_font
+    font-size: 1vw
     font-weight: 400
+    letter-spacing: -1px
     position: absolute
-    padding-bottom: 50px
-    padding-left: 50px
     bottom: 0
     left: 0
-    letter-spacing: -1px
+    padding-bottom: 50px
+    padding-left: 50px
+/* content_1 - END */
 
+/* content_2 - START */
 .links_1
+    /* Text */
     color: $secondary_color
-    font-size: 80px
+    font-size: 4vw
     font-weight: 1000
     font-family: $primary_font
     text-decoration: none
     line-height: 175px
+    padding-left: 32px
 
+    /* Box */
     position: absolute
     right: 0
-    border: 5px solid $primary_color
     background-color: $primary_color
     height: 175px
     max-width: 90%
     width: 1200px
     margin-bottom: 700px
-    border-top-left-radius: 15px
-    border-bottom-left-radius: 15px        
-    padding-left: 32px
+    border-top-left-radius: $border_px
+    border-bottom-left-radius: $border_px      
     transition: transform 0.2s ease-in-out
     
 .links_2
+    /* Text */
     color: $secondary_color
-    font-size: 80px
+    font-size: 4vw
     font-weight: 1000
     font-family: $primary_font
     text-decoration: none
     line-height: 175px
+    padding-left: 32px
 
+    /* Box */
     position: absolute
     right: 0
     background-color: $primary_color
-    border: 5px solid $primary_color
     height: 175px
     max-width: 90%
     width: 1200px
     margin-bottom: 310px
-    border-top-left-radius: 15px
-    border-bottom-left-radius: 15px
-    padding-left: 32px
+    border-top-left-radius: $border_px
+    border-bottom-left-radius: $border_px
     transition: transform 0.2s ease-in-out
 
 .links_3
+    /* Text */
     color: $secondary_color
-    font-size: 80px
+    font-size: 4vw
     font-weight: 1000
     font-family: $primary_font
     text-decoration: none
-
+    line-height: 175px
     padding-left: 32px
+
+    /* Box */
     position: absolute
     right: 0
     background-color: $primary_color
-    border: 5px solid $primary_color
     height: 175px
     max-width: 90%
     width: 1200px
     margin-top: 310px
-    border-top-left-radius: 15px
-    border-bottom-left-radius: 15px
+    border-top-left-radius: $border_px
+    border-bottom-left-radius: $border_px
     transition: transform 0.2s ease-in-out
-    line-height: 175px
     
 .links_4
+    /* Text */
     color: $secondary_color
-    font-size: 80px
+    font-size: 4vw
     font-weight: 1000
     font-family: $primary_font
     text-decoration: none
-
-    display: inline-block
+    line-height: 175px
     padding-left: 32px
+
+    /* Box */
     position: absolute
     right: 0
     background-color: $primary_color
-    border: 5px solid $primary_color
     height: 175px
     max-width: 90%
     width: 1200px
     margin-top: 700px
-    border-top-left-radius: 15px
-    border-bottom-left-radius: 15px
-    line-height: 175px
+    border-top-left-radius: $border_px
+    border-bottom-left-radius: $border_px
     transition: transform 0.2s ease-in-out
-    z-index: 1
 
 .links_1:hover
     transform: translate(50px)
@@ -160,7 +162,9 @@ $primary_font: 'Inter', sans-serif
 
 .links_4:hover
     transform: translate(50px)
+/* content_2 - END */
 
+/* Responsive Design - START */
 @media only screen and (max-width: 768px)
     .container
         flex-direction: column
@@ -179,27 +183,28 @@ $primary_font: 'Inter', sans-serif
         font-size: 30px
         height: 75px
         line-height: 75px
-        margin-bottom: 300px
-    .links_1:hover
-        transform: translate(30px)
+        margin-bottom: 290px
     .links_2
         font-size: 30px
         height: 75px
         line-height: 75px
         margin-bottom: 130px
-    .links_2:hover
-        transform: translate(30px)
     .links_3
         font-size: 30px
         height: 75px
         line-height: 75px
         margin-top: 130px
-    .links_3:hover
-        transform: translate(30px)
     .links_4
         font-size: 30px
         height: 75px
         line-height: 75px
-        margin-top: 300px
+        margin-top: 290px
+    .links_1:hover
+        transform: translate(30px)
+    .links_2:hover
+        transform: translate(30px)
+    .links_3:hover
+        transform: translate(30px)
     .links_4:hover
         transform: translate(30px)
+/* Responsive Design - END */

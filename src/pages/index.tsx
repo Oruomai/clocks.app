@@ -20,7 +20,7 @@ export default function Home() {
         <div className={styles.container}>
         <section className={styles.content}>
             <p className={styles.logo_home}>clocks.app</p>
-            <h1 className={styles.heading_home}>The <span className={styles.heading_span}>#1</span><br />aesthetic <br />clock app <br />without Ads.</h1>
+            <h1 className={styles.heading_home}>The #1<br />aesthetic <br />clock app <br />without Ads.</h1>
             <p className={styles.paragraph_home}>High performance and a sleek, 
                                                 <br />minimalist design without any ads,
                                                 <br />making it both aesthetically pleasing
