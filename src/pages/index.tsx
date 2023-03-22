@@ -26,21 +26,12 @@ export default function Home() {
                                                 <br />making it both aesthetically pleasing
                                                 <br />and efficient in terms of memory usage.</p>
         </section>
-        <nav className={styles.content_2}>
+        <section className={styles.content_2}>
               <Link href="./clocks/digital" className={styles.links_1}>DIGITAL</Link>
               <Link href="./clocks/analog" className={styles.links_2}>ANALOG</Link>
               <Link href="./timers/stopwatch" className={styles.links_3}>STOPWATCH</Link>
               <Link href="./timers/stopwatch" className={styles.links_4}>COUNTER</Link>
-        </nav>
-        </div>
-        <div className={styles.contact_box}>
-          <div className={styles.contact}>
-            {contactText.split('').map((char, i) => (
-                    <span key={i} style={{ transform: `rotate(${i * 8.3}deg)` }}>
-                      {char}
-                    </span>
-                  ))}
-          </div>
+        </section>
         </div>
       </main>
     </>
