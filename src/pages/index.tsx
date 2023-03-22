@@ -1,13 +1,12 @@
 import Head from 'next/head'
 import Link from 'next/link';
-
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '../styles/home.module.sass'
-
 const inter = Inter({ subsets: ['latin'] })
+import { useState } from 'react';
 
 export default function Home() {
+  const [contactText, setContactText] = useState('Contact Me - Contact Me - Contact Me');
   return (
     <>
       <Head>
@@ -28,15 +27,20 @@ export default function Home() {
                                                 <br />and efficient in terms of memory usage.</p>
         </section>
         <nav className={styles.content_2}>
-            <div className={styles.box_1}>
               <Link href="./clocks/digital" className={styles.links_1}>DIGITAL</Link>
-            </div>
-            <div className={styles.box_2}>
               <Link href="./clocks/analog" className={styles.links_2}>ANALOG</Link>
-            </div>
               <Link href="./timers/stopwatch" className={styles.links_3}>STOPWATCH</Link>
               <Link href="./timers/stopwatch" className={styles.links_4}>COUNTER</Link>
         </nav>
+        </div>
+        <div className={styles.contact_box}>
+          <div className={styles.contact}>
+            {contactText.split('').map((char, i) => (
+                    <span key={i} style={{ transform: `rotate(${i * 8.3}deg)` }}>
+                      {char}
+                    </span>
+                  ))}
+          </div>
         </div>
       </main>
     </>

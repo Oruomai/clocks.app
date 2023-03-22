@@ -19,18 +19,20 @@
     font-weight: 1000
     line-height: 1
     margin-bottom: 100px
-    padding-left: 32px
+    padding-left: 50px
+    letter-spacing: -2px
 
 .logo_home
     color: #00203fff
-    font-size: 27px
+    font-size: 48px
     font-family: 'Inter', sans-serif
     font-weight: 1000
     position: absolute
     top: 0
     left: 0
-    padding-left: 32px
-    padding-top: 32px
+    padding-left: 50px
+    padding-top: 50px
+    letter-spacing: -2px
 
 .heading_span
     color: #00203fff
@@ -41,11 +43,11 @@
     font-family: 'Inter', sans-serif
     font-weight: 400
     position: absolute
-    padding-bottom: 32px
-    padding-left: 32px
+    padding-bottom: 50px
+    padding-left: 50px
     bottom: 0
     left: 0
-
+    letter-spacing: -2px
 
 .content_2
     position: relative
@@ -57,40 +59,26 @@
     height: 100vh
     background: #00203fff
 
-.box_1
-    position: absolute
-    right: 0
-    border: 5px solid #adefd1ff
-    background-color: #adefd1ff
-    height: 150px
-    max-width: 90%
-    width: 1000px
-    margin-bottom: 620px
-    border-top-left-radius: 10px
-    border-bottom-left-radius: 10px        
-    padding-left: 32px                                                              
-
-.box_2
-    position: absolute
-    right: 0
-    background-color: #adefd1ff
-    border: 5px solid #adefd1ff
-    height: 150px
-    max-width: 90%
-    width: 1000px
-    margin-bottom: 310px
-    border-top-left-radius: 10px
-    border-bottom-left-radius: 10px
-    padding-left: 32px
-
 .links_1
     color: #00203fff
     font-size: 80px
     font-weight: 1000
     font-family: 'Inter', sans-serif
     text-decoration: none
-    position: relative
-    line-height: 150px
+    line-height: 175px
+
+    position: absolute
+    right: 0
+    border: 5px solid #adefd1ff
+    background-color: #adefd1ff
+    height: 175px
+    max-width: 90%
+    width: 1200px
+    margin-bottom: 700px
+    border-top-left-radius: 20px
+    border-bottom-left-radius: 20px        
+    padding-left: 32px
+    transition: transform 0.2s ease-in-out
     
 .links_2
     color: #00203fff
@@ -98,8 +86,20 @@
     font-weight: 1000
     font-family: 'Inter', sans-serif
     text-decoration: none
-    position: relative
-    line-height: 150px
+    line-height: 175px
+
+    position: absolute
+    right: 0
+    background-color: #adefd1ff
+    border: 5px solid #adefd1ff
+    height: 175px
+    max-width: 90%
+    width: 1200px
+    margin-bottom: 310px
+    border-top-left-radius: 20px
+    border-bottom-left-radius: 20px
+    padding-left: 32px
+    transition: transform 0.2s ease-in-out
 
 .links_3
     color: #00203fff
@@ -113,13 +113,14 @@
     right: 0
     background-color: #adefd1ff
     border: 5px solid #adefd1ff
-    height: 150px
+    height: 175px
     max-width: 90%
-    width: 1000px
+    width: 1200px
     margin-top: 310px
-    border-top-left-radius: 10px
-    border-bottom-left-radius: 10px
-    line-height: 150px
+    border-top-left-radius: 20px
+    border-bottom-left-radius: 20px
+    transition: transform 0.2s ease-in-out
+    line-height: 175px
     
 .links_4
     color: #00203fff
@@ -134,19 +135,27 @@
     right: 0
     background-color: #adefd1ff
     border: 5px solid #adefd1ff
-    height: 150px
+    height: 175px
     max-width: 90%
-    width: 1000px
-    margin-top: 620px
-    border-top-left-radius: 10px
-    border-bottom-left-radius: 10px
-    line-height: 150px
-    transition: transform 0.3s ease-in-out
+    width: 1200px
+    margin-top: 700px
+    border-top-left-radius: 20px
+    border-bottom-left-radius: 20px
+    line-height: 175px
+    transition: transform 0.2s ease-in-out
     z-index: 1
 
-.link_4:hover,
-.link_4:focus-within
-  transform: translateX(50px)
+.links_1:hover
+    transform: translate(50px)
+
+.links_2:hover
+    transform: translate(50px)
+
+.links_3:hover
+    transform: translate(50px)
+
+.links_4:hover
+    transform: translate(50px)
 
 @media (max-width: 768px)
     .heading_home
