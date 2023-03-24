@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { Menu } from 'react-feather'
 
 export default function Home() {
-  const [contactText, setContactText] = useState('Contact Me - Contact Me - Contact Me');
   return (
     <>
       <Head>
@@ -21,7 +20,7 @@ export default function Home() {
         <div className={styles.container}>
         <section className={styles.content}>
             <p className={styles.logo_home}>clocks.app</p>
-            <Link href="/"><div className={styles.button}><Menu /></div></Link>
+            <div className={styles.button}><Menu /></div>
             <h1 className={styles.heading_home}>The #1<br />aesthetic <br />clock app <br />without Ads.</h1>
             <p className={styles.paragraph_home}>High performance and a sleek, 
                                                 <br />minimalist design without any ads,
