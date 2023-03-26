@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Inter } from 'next/font/google'
 import styles from '../styles/home.module.sass'
 const inter = Inter({ subsets: ['latin'] })
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu } from 'react-feather'
 
 export default function Home() {
@@ -12,23 +12,43 @@ export default function Home() {
   const [isButtonClicked_2, setIsButtonClicked_2] = useState(false);
   const [isButtonClicked_3, setIsButtonClicked_3] = useState(false);
 
+  useEffect(() => {
+    const selectedType = localStorage.getItem('selectedType');
+    if (selectedType === 'type1') {
+      setIsButtonClicked(true);
+      setIsButtonClicked_2(false);
+      setIsButtonClicked_3(false);
+    } else if (selectedType === 'type2') {
+      setIsButtonClicked(false);
+      setIsButtonClicked_2(true);
+      setIsButtonClicked_3(false);
+    } else if (selectedType === 'type3') {
+      setIsButtonClicked(false);
+      setIsButtonClicked_2(false);
+      setIsButtonClicked_3(true);
+    }
+  }, []);
+
   const handleType1Click = () => {
     setIsButtonClicked(true);
     setIsButtonClicked_2(false);
     setIsButtonClicked_3(false);
-  }
+    localStorage.setItem('selectedType', 'type1');
+  };
 
   const handleType2Click = () => {
     setIsButtonClicked(false);
-    setIsButtonClicked_3(false);
     setIsButtonClicked_2(true);
-  }
+    setIsButtonClicked_3(false);
+    localStorage.setItem('selectedType', 'type2');
+  };
 
   const handleType3Click = () => {
     setIsButtonClicked(false);
     setIsButtonClicked_2(false);
     setIsButtonClicked_3(true);
-  }
+    localStorage.setItem('selectedType', 'type3');
+  };
 
   return (
     <>
