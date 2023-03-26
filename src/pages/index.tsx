@@ -64,7 +64,7 @@ export default function Home() {
         <section className={`${styles.content} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>
             <p className={`${styles.logo_home} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>clocks.app</p>
             <div className={styles.dropdown}>
-              <button className={styles.dropbtn}><Menu />
+              <button className={`${styles.dropbtn} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}><Menu />
                 <div className={styles.dropdownContent}>
                   <span onClick={handleType1Click}>Type 1</span>
                   <span onClick={handleType2Click}>Type 2</span>
