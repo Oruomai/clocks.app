@@ -1,4 +1,4 @@
-$primary_color: #adefd1ff
+$primary-color: #adefd1ff
 $secondary_color: #00203fff
 $primary_font: 'Inter', sans-serif
 $border_px: 10px
@@ -216,7 +216,6 @@ $border_px: 10px
 /* Responsive Design - END */
 
 .button svg
-    color: $secondary_color
     width: auto
     height: 75px
     position: absolute
@@ -263,3 +262,58 @@ $border_px: 10px
         line-height: 75px
         margin-top: 130px
 /* iPhone 11 - END */
+
+/* Color Customization - START */
+.dropdown 
+    float: left
+    overflow: hidden
+
+.dropdown .dropbtn
+    position: absolute
+    right: 0
+    top: 0
+    font-size: 16px
+    border: none
+    outline: none
+    color: $secondary_color
+    padding: 14px 16px
+    background-color: inherit
+    font-family: inherit
+    margin: 0
+
+.dropdownContent
+    display: none
+    position: absolute
+    background-color: transparent
+    max-width: 15vw
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+    z-index: 1
+
+.dropdownContent span
+    float: none
+    color: black
+    padding: 12px 16px
+    text-decoration: none
+    display: block
+    text-align: left
+
+.dropdown:hover .dropdownContent
+    display: block
+/* Color Customization - END */
+
+.contentClicked_a1
+    background-color: #adefd1ff
+.contentClicked_a2
+    background-color: #00203fff
+.contentClicked_b1
+    background-color: #f4b41a
+    color: #143d59
+.contentClicked_b2
+    background-color: #143d59
+    color: #f4b41a
+.contentClicked_c1
+    background-color: #fce77d
+    color: #f96167
+.contentClicked_c2
+    background-color: #f96167
+    color: #fce77d

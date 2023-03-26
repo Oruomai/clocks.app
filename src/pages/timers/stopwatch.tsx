@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useState, useEffect } from "react";
 import Link from 'next/link';
 import styles from '../../styles/stopwatch.module.sass'
 import { ArrowLeft } from 'react-feather'

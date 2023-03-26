@@ -7,6 +7,29 @@ import { useState } from 'react';
 import { Menu } from 'react-feather'
 
 export default function Home() {
+
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [isButtonClicked_2, setIsButtonClicked_2] = useState(false);
+  const [isButtonClicked_3, setIsButtonClicked_3] = useState(false);
+
+  const handleType1Click = () => {
+    setIsButtonClicked(true);
+    setIsButtonClicked_2(false);
+    setIsButtonClicked_3(false);
+  }
+
+  const handleType2Click = () => {
+    setIsButtonClicked(false);
+    setIsButtonClicked_3(false);
+    setIsButtonClicked_2(true);
+  }
+
+  const handleType3Click = () => {
+    setIsButtonClicked(false);
+    setIsButtonClicked_2(false);
+    setIsButtonClicked_3(true);
+  }
+
   return (
     <>
       <Head>
@@ -18,20 +41,28 @@ export default function Home() {
       </Head>
       <main>
         <div className={styles.container}>
-        <section className={styles.content}>
-            <p className={styles.logo_home}>clocks.app</p>
-            <div className={styles.button}><Menu /></div>
-            <h1 className={styles.heading_home}>The #1<br />aesthetic <br />clock app <br />without Ads.</h1>
-            <p className={styles.paragraph_home}>High performance and a sleek, 
+        <section className={`${styles.content} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>
+            <p className={`${styles.logo_home} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>clocks.app</p>
+            <div className={styles.dropdown}>
+              <button className={styles.dropbtn}><Menu />
+                <div className={styles.dropdownContent}>
+                  <span onClick={handleType1Click}>Type 1</span>
+                  <span onClick={handleType2Click}>Type 2</span>
+                  <span onClick={handleType3Click}>Type 3</span>
+                </div>
+              </button>
+            </div>
+            <h1 className={`${styles.heading_home} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>The #1<br />aesthetic <br />clock app <br />without Ads.</h1>
+            <p className={`${styles.paragraph_home} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>High performance and a sleek, 
                                                 <br />minimalist design without any ads,
                                                 <br />making it both aesthetically pleasing
                                                 <br />and efficient in terms of memory usage.</p>
         </section>
-        <section className={styles.content_2}>
-              <Link href="./clocks/digital" className={styles.links_1}>DIGITAL</Link>
-              <Link href="./clocks/analog" className={styles.links_2}>ANALOG</Link>
-              <Link href="./timers/stopwatch" className={styles.links_3}>STOPWATCH</Link>
-              <Link href="./timers/stopwatch" className={styles.links_4}>COUNTER</Link>
+        <section className={`${styles.content_2} ${isButtonClicked ? styles.contentClicked_a2 : ''} ${isButtonClicked_2 ? styles.contentClicked_b2 : ''} ${isButtonClicked_3 ? styles.contentClicked_c2 : ''}`}>
+              <Link href="./clocks/digital" className={`${styles.links_1} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>DIGITAL</Link>
+              <Link href="./clocks/analog" className={`${styles.links_2} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>ANALOG</Link>
+              <Link href="./timers/stopwatch" className={`${styles.links_3} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>STOPWATCH</Link>
+              <Link href="./timers/stopwatch" className={`${styles.links_4} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>COUNTER</Link>
         </section>
         </div>
       </main>
