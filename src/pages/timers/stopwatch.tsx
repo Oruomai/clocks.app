@@ -8,16 +8,18 @@ function Stopwatch() {
   const [isRunning, setIsRunning] = useState(false);
 
   useEffect(() => {
-    let intervalId;
-
-    if (isRunning) {
-      intervalId = setInterval(() => {
-        setTime(prevTime => prevTime + 10);
-      }, 10);
+    if (typeof window !== 'undefined') {
+      let intervalId;
+  
+      if (isRunning) {
+        intervalId = setInterval(() => {
+          setTime(prevTime => prevTime + 10);
+        }, 10);
+      }
+  
+      return () => clearInterval(intervalId);
     }
-
-    return () => clearInterval(intervalId);
-  }, [isRunning]);
+  }, [isRunning]);  
 
   const handleStartStop = () => {
     setIsRunning(prevIsRunning => !prevIsRunning);
