@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from '../../styles/digital.module.sass'
 import { ArrowLeft } from 'react-feather'
 
-const Digital: React.FC = () => {
+function Digital() {
   useEffect(() => {
     function clock() {
       let hours = document.getElementById('hour');
