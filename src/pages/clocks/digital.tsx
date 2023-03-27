@@ -11,7 +11,7 @@ function Digital() {
       let seconds = document.getElementById('seconds');
       let ampm = document.getElementById('ampm');
   
-      fetch('http://worldtimeapi.org/api/ip')
+      fetch('https://worldtimeapi.org/api/ip')
         .then(response => response.json())
         .then(data => {
           let timezone = data.timezone;
