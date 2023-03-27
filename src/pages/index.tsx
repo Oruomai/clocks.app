@@ -66,9 +66,9 @@ export default function Home() {
             <div className={styles.dropdown}>
               <button className={`${styles.dropbtn} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}><Menu />
                 <div className={styles.dropdownContent}>
-                  <span onClick={handleType1Click}>Type 1</span>
-                  <span onClick={handleType2Click}>Type 2</span>
-                  <span onClick={handleType3Click}>Type 3</span>
+                  <span className={styles.circle_1} onClick={handleType1Click}></span>
+                  <span className={styles.circle_2} onClick={handleType2Click}></span>
+                  <span className={styles.circle_3} onClick={handleType3Click}></span>
                 </div>
               </button>
             </div>
