@@ -8,46 +8,90 @@ import { Menu } from 'react-feather'
 
 export default function Home() {
 
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const [isButtonClicked_1, setIsButtonClicked_1] = useState(false);
   const [isButtonClicked_2, setIsButtonClicked_2] = useState(false);
   const [isButtonClicked_3, setIsButtonClicked_3] = useState(false);
+  const [isButtonClicked_4, setIsButtonClicked_4] = useState(false);
+  const [isButtonClicked_5, setIsButtonClicked_5] = useState(false);
 
   useEffect(() => {
     const selectedType = localStorage.getItem('selectedType');
     if (selectedType === 'type1') {
-      setIsButtonClicked(true);
+      setIsButtonClicked_1(true);
       setIsButtonClicked_2(false);
       setIsButtonClicked_3(false);
+      setIsButtonClicked_4(false);
+      setIsButtonClicked_5(false);
     } else if (selectedType === 'type2') {
-      setIsButtonClicked(false);
+      setIsButtonClicked_1(false);
       setIsButtonClicked_2(true);
       setIsButtonClicked_3(false);
+      setIsButtonClicked_4(false);
+      setIsButtonClicked_5(false);
     } else if (selectedType === 'type3') {
-      setIsButtonClicked(false);
+      setIsButtonClicked_1(false);
       setIsButtonClicked_2(false);
       setIsButtonClicked_3(true);
+      setIsButtonClicked_4(false);
+      setIsButtonClicked_5(false);
+    } else if (selectedType === 'type4') {
+      setIsButtonClicked_1(false);
+      setIsButtonClicked_2(false);
+      setIsButtonClicked_3(false);
+      setIsButtonClicked_4(true);
+      setIsButtonClicked_5(false);
+    } else if (selectedType === 'type5') {
+      setIsButtonClicked_1(false);
+      setIsButtonClicked_2(false);
+      setIsButtonClicked_3(false);
+      setIsButtonClicked_4(false);
+      setIsButtonClicked_5(true);
     }
   }, []);
 
   const handleType1Click = () => {
-    setIsButtonClicked(true);
+    setIsButtonClicked_1(true);
     setIsButtonClicked_2(false);
     setIsButtonClicked_3(false);
+    setIsButtonClicked_4(false);
+    setIsButtonClicked_5(false);
     localStorage.setItem('selectedType', 'type1');
   };
 
   const handleType2Click = () => {
-    setIsButtonClicked(false);
+    setIsButtonClicked_1(false);
     setIsButtonClicked_2(true);
     setIsButtonClicked_3(false);
+    setIsButtonClicked_4(false);
+    setIsButtonClicked_5(false);
     localStorage.setItem('selectedType', 'type2');
   };
 
   const handleType3Click = () => {
-    setIsButtonClicked(false);
+    setIsButtonClicked_1(false);
     setIsButtonClicked_2(false);
     setIsButtonClicked_3(true);
+    setIsButtonClicked_4(false);
+    setIsButtonClicked_5(false);
     localStorage.setItem('selectedType', 'type3');
+  };
+
+  const handleType4Click = () => {
+    setIsButtonClicked_1(false);
+    setIsButtonClicked_2(false);
+    setIsButtonClicked_3(false);
+    setIsButtonClicked_4(true);
+    setIsButtonClicked_5(false);
+    localStorage.setItem('selectedType', 'type4');
+  };
+
+  const handleType5Click = () => {
+    setIsButtonClicked_1(false);
+    setIsButtonClicked_2(false);
+    setIsButtonClicked_3(false);
+    setIsButtonClicked_4(false);
+    setIsButtonClicked_5(true);
+    localStorage.setItem('selectedType', 'type5');
   };
 
   return (
@@ -61,29 +105,90 @@ export default function Home() {
       </Head>
       <main>
         <div className={styles.container}>
-        <section className={`${styles.content} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>
-            <p className={`${styles.logo_home} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>clocks.app</p>
+          <section className={`${styles.content}
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''} 
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>
+            <p className={`${styles.logo_home}
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>
+              clocks.app</p>
             <div className={styles.dropdown}>
-              <button className={`${styles.dropbtn} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}><Menu />
+              <button className={`${styles.dropbtn}
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>
+                <Menu />
                 <div className={styles.dropdownContent}>
                   <span className={styles.circle_1} onClick={handleType1Click}></span>
                   <span className={styles.circle_2} onClick={handleType2Click}></span>
                   <span className={styles.circle_3} onClick={handleType3Click}></span>
+                  <span className={styles.circle_4} onClick={handleType4Click}></span>
+                  <span className={styles.circle_5} onClick={handleType5Click}></span>
                 </div>
               </button>
             </div>
-            <h1 className={`${styles.heading_home} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>The #1<br />aesthetic <br />clock app <br />without Ads.</h1>
-            <p className={`${styles.paragraph_home} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>High performance and a sleek, 
-                                                <br />minimalist design without any ads,
-                                                <br />making it both aesthetically pleasing
-                                                <br />and efficient in terms of memory usage.</p>
-        </section>
-        <section className={`${styles.content_2} ${isButtonClicked ? styles.contentClicked_a2 : ''} ${isButtonClicked_2 ? styles.contentClicked_b2 : ''} ${isButtonClicked_3 ? styles.contentClicked_c2 : ''}`}>
-              <Link href="./clocks/digital" className={`${styles.links_1} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>DIGITAL</Link>
-              <Link href="./clocks/analog" className={`${styles.links_2} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>ANALOG</Link>
-              <Link href="./timers/stopwatch" className={`${styles.links_3} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>STOPWATCH</Link>
-              <Link href="./timers/stopwatch" className={`${styles.links_4} ${isButtonClicked ? styles.contentClicked_a1 : ''} ${isButtonClicked_2 ? styles.contentClicked_b1 : ''} ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}`}>COUNTER</Link>
-        </section>
+            <h1 className={`${styles.heading_home} 
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>
+              The #1<br />aesthetic <br />clock app <br />without Ads.</h1>
+            <p className={`${styles.paragraph_home}
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>
+              High performance and a sleek,
+              <br />minimalist design without any ads,
+              <br />making it both aesthetically pleasing
+              <br />and efficient in terms of memory usage.</p>
+          </section>
+          <section className={`${styles.content_2}
+                    ${isButtonClicked_1 ? styles.contentClicked_a2 : ''} 
+                    ${isButtonClicked_2 ? styles.contentClicked_b2 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c2 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d2 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e2 : ''}`}>
+            <Link href="./clocks/digital" className={`
+                    ${styles.links_1}
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>                    
+              DIGITAL</Link>
+            <Link href="./clocks/analog" className={`${styles.links_2}
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>   
+              ANALOG</Link>
+            <Link href="./timers/stopwatch" className={`${styles.links_3}
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>   
+              STOPWATCH</Link>
+            <Link href="./timers/stopwatch" className={`${styles.links_4}
+                    ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
+                    ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
+                    ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}
+                    ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
+                    ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>   
+              COUNTER</Link>
+          </section>
         </div>
       </main>
     </>
