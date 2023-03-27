@@ -9,7 +9,7 @@ function Stopwatch() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      let intervalId;
+      let intervalId: NodeJS.Timeout;
   
       if (isRunning) {
         intervalId = setInterval(() => {
@@ -30,7 +30,7 @@ function Stopwatch() {
     setTime(0);
   };
 
-  const formatTime = time => {
+  const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60000);
     const seconds = Math.floor((time % 60000) / 1000);
     const milliseconds = Math.floor((time % 1000) / 10);
