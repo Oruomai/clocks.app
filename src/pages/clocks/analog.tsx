@@ -18,7 +18,19 @@ const Analog: React.FC = () => {
       <main className={styles.content}>
         <div className={styles.container}>
           <Link href="/"><div className={styles.button}><ArrowLeft /></div></Link>
-          <div className={styles.box}></div>
+          <div className={styles.box}>
+            <div className={styles.clock}>
+              <div className={styles.hour}>
+                <div className={styles.hr} id="hr"></div>
+              </div>
+              <div className={styles.min}>
+                <div className={styles.mn} id="mn"></div>
+              </div>
+              <div className={styles.sec}>
+                <div className={styles.sc} id="sc"></div>
+              </div>
+            </div>      
+          </div>
         </div>
       </main>
     </>
