@@ -8,27 +8,19 @@ function Analog() {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    fetch('https://worldtimeapi.org/api/ip')
-      .then(response => response.json())
-      .then(data => {
-        let timezone = data.timezone;
-        let now = new Date(data.datetime);
-        setDate(now);
-      })
-      .catch(error => console.error(error));
-  }, []);
-
-  useEffect(() => {
     const intervalId = setInterval(() => {
-      setDate(date => new Date(date.getTime() + 1000));
+      fetch('https://worldtimeapi.org/api/ip')
+        .then(response => response.json())
+        .then(data => {
+          let timezone = data.timezone;
+          let now = new Date(data.datetime);
+          setDate(now);
+        })
+        .catch(error => console.error(error));
     }, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
-
-  function degToRad(degrees: number): number {
-    return degrees * Math.PI / 180;
-  }
 
   const hourStyle = {
     transform: `rotate(${(date.getHours() % 12) * 30 + (date.getMinutes() / 2)}deg)`
