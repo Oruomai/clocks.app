@@ -9,7 +9,7 @@ function Analog() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      fetch('https://worldtimeapi.org/api/ip')
+      fetch('https://worldtimeapi.org/api/ip?timestamp=${Date.now()}')
         .then(response => response.json())
         .then(data => {
           let timezone = data.timezone;
