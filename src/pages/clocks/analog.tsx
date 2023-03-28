@@ -8,12 +8,13 @@ function Analog() {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
+    const timezoneOffset = new Date().getTimezoneOffset();
+    const url = `https://worldtimeapi.org/api/ip?utc_offset=${timezoneOffset}`;
     const intervalId = setInterval(() => {
-      fetch(`https://worldtimeapi.org/api/ip?timezone=${Intl.DateTimeFormat().resolvedOptions().timeZone}`)
+      fetch(url)
         .then(response => response.json())
         .then(data => {
-          let timezone = data.timezone;
-          let now = new Date(data.datetime);
+          let now = new Date(data.utc_datetime);
           setDate(now);
         })
         .catch(error => console.error(error));
