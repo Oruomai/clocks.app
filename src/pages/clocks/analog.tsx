@@ -10,14 +10,18 @@ function Analog() {
   useEffect(() => {
     const timezoneOffset = new Date().getTimezoneOffset();
     const url = `https://worldtimeapi.org/api/ip?utc_offset=${timezoneOffset}`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        let now = new Date(data.utc_datetime);
+        setDate(now);
+      })
+      .catch(error => console.error(error));
+  }, []);
+
+  useEffect(() => {
     const intervalId = setInterval(() => {
-      fetch(url)
-        .then(response => response.json())
-        .then(data => {
-          let now = new Date(data.utc_datetime);
-          setDate(now);
-        })
-        .catch(error => console.error(error));
+      setDate(date => new Date(date.getTime() + 1000));
     }, 1000);
 
     return () => clearInterval(intervalId);
