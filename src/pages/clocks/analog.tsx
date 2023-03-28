@@ -15,14 +15,8 @@ function Analog() {
           let timezone = data.timezone;
           let now = new Date(data.datetime);
           let localTime = now.toLocaleString('en-US', { timeZone: timezone });
-          let [dateString, timeString] = localTime.split(', ');
-          let [h, m, s] = timeString.split(':');
           let nowLocal = new Date();
-          let utcOffset = nowLocal.getTimezoneOffset() * 60000;
-          let nowUTC = nowLocal.getTime() + utcOffset;
-          let nowOffset = nowUTC + (3600000 * parseFloat(h)) + (60000 * parseFloat(m)) + (1000 * parseFloat(s));
-          let nowLocalOffset = new Date(nowOffset);
-          setDate(nowLocalOffset);
+          setDate(nowLocal);
         })
         .catch(error => console.error(error));
     }, 1000);
