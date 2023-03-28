@@ -14,7 +14,15 @@ function Analog() {
         .then(data => {
           let timezone = data.timezone;
           let now = new Date(data.datetime);
-          setDate(now);
+          let localTime = now.toLocaleString('en-US', { timeZone: timezone });
+          let [dateString, timeString] = localTime.split(', ');
+          let [h, m, s] = timeString.split(':');
+          let nowLocal = new Date();
+          let utcOffset = nowLocal.getTimezoneOffset() * 60000;
+          let nowUTC = nowLocal.getTime() + utcOffset;
+          let nowOffset = nowUTC + (3600000 * parseFloat(h)) + (60000 * parseFloat(m)) + (1000 * parseFloat(s));
+          let nowLocalOffset = new Date(nowOffset);
+          setDate(nowLocalOffset);
         })
         .catch(error => console.error(error));
     }, 1000);
@@ -42,11 +50,16 @@ function Analog() {
         <title>Analog Clock</title>
         <meta name="description" content="Analog Clock" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://unpkg.com/feather-icons"></script>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.content}>
         <div className={styles.container}>
-          <Link href="/"><div className={styles.button}><ArrowLeft /></div></Link>
+          <Link href="/">
+            <div className={styles.button}>
+              <ArrowLeft />
+            </div>
+          </Link>
           <div className={styles.box}>
             <div className={styles.clock}>
               <div className={styles.hour}>
