@@ -34,12 +34,12 @@ function Counter() {
         }
       });
     }, 1000);
-    setIntervalId(id);
+    //setIntervalId(id);
     setTimerRunning(true);
   };  
 
   const stopTimer = () => {
-    clearInterval(intervalId);
+    //clearInterval(intervalId);
     setIntervalId(null);
     setTimerRunning(false);
   };
@@ -48,7 +48,7 @@ function Counter() {
     setHours(0);
     setMinutes(0);
     setSeconds(0);
-    clearInterval(intervalId);
+    //clearInterval(intervalId);
     setIntervalId(null);
   };
 
