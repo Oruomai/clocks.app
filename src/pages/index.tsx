@@ -181,7 +181,7 @@ export default function Home() {
                     ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
                     ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>   
               STOPWATCH</Link>
-            <Link href="./timers/stopwatch" className={`${styles.links_4}
+            <Link href="./timers/counter" className={`${styles.links_4}
                     ${isButtonClicked_1 ? styles.contentClicked_a1 : ''}
                     ${isButtonClicked_2 ? styles.contentClicked_b1 : ''}
                     ${isButtonClicked_3 ? styles.contentClicked_c1 : ''}

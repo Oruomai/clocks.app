@@ -1,0 +1,138 @@
+.section
+    position: relative
+    width: 100%
+    height: 100vh
+    background: #d7fe3a
+    overflow: hidden
+    display: flex
+    font-family: 'VALORANT', sans-serif
+    /*font-family: 'Open Sans', sans-serif;*/
+    
+.sec
+    position: relative
+    width: 50%
+    height: 100%
+    background: #000
+    display: flex
+    justify-content: center
+    align-items: center
+
+.sec
+    h2
+        color: #fff
+        font-size: 16vw
+        font-weight: 800
+        line-height: 1em
+
+.sec2
+    background: #d7fe3a
+
+.sec2
+    h2
+        color: #000
+        font-size: 30vw
+
+.ampm
+    position: absolute
+    top: 40px
+    right: 40px
+    color: #000
+    font-size: 6vw
+    font-weight: 700
+
+#dot
+    position: relative
+    animation: animate 1s linear infinite
+
+.button
+    position: absolute
+    z-index: 1
+
+@keyframes animate
+    0%, 15%
+        opacity: 0
+    15.1%, 100%
+        opacity: 1
+
+@media (max-width: 768px)
+    .section
+        flex-direction: column
+    .sec
+        width: 100%
+        height: 50%
+    .sec h2
+        font-size: 30vw
+    .sec2 h2
+        font-size: 60vw
+    .ampm
+        top: 20px
+        right: 20px
+
+.button
+    position: fixed
+    z-index: 1
+    color: #fff
+    top: 0
+    left: 0
+    padding-top: 30px
+    padding-left: 30px
+
+.button:hover
+    opacity: 50%
+
+.container_button
+    position: absolute
+    bottom: 0px
+    display: flex
+    flex-direction: row
+    width: 100%
+
+.start_button
+    width: 50%
+    height: 50px
+    background: #000000
+    color: #d7fe3a
+    font-weight: bold
+    font-size: 14px
+    border: 1px single #d7fe3a
+
+.start_button:hover
+    opacity: 50%
+
+.stop_button
+    width: 50%
+    height: 50px
+    background: #000000
+    color: #d7fe3a
+    font-weight: bold
+    font-size: 14px
+    border: 1px single #d7fe3a
+
+.stop_button:hover
+    opacity: 50%
+
+.math_button
+    position: absolute
+    display: flex
+    flex-direction: row
+    bottom: 50px
+    width: 100%
+
+
+.add_button
+    width: 16.66666%
+    height: 50px
+    background: #000000
+    color: #d7fe3a
+    font-weight: bold
+    font-size: 14px
+    border: 1px single #d7fe3a
+
+.subtract_button
+    width: 16.66666%
+    height: 50px
+    background: #000000
+    color: #d7fe3a
+    font-weight: bold
+    font-size: 14px
+    border: 1px single #d7fe3a
