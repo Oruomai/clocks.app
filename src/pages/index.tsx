@@ -149,7 +149,7 @@ export default function Home() {
                     ${isButtonClicked_4 ? styles.contentClicked_d1 : ''}
                     ${isButtonClicked_5 ? styles.contentClicked_e1 : ''}`}>
               High performance and a sleek,
-              <br />minimalist design without any ads,
+              <br />minimalist design without any ads
               <br />making it both aesthetically pleasing
               <br />and efficient in terms of memory usage.</p>
           </section>
