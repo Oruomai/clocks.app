@@ -4,14 +4,16 @@ import styles from '../../styles/counter.module.sass';
 import { ArrowLeft } from 'react-feather';
 
 function Counter() {
+  // State variables
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [intervalId, setIntervalId] = useState(null);
   const [timerRunning, setTimerRunning] = useState(false);
 
+  // Function to start the timer
   const startTimer = () => {
-    const totalSeconds = hours * 3600 + minutes * 60 + seconds - 1;
+    const totalSeconds = hours * 3600 + minutes * 60 + seconds;
     if (intervalId !== null) {
       clearInterval(intervalId);
     }
@@ -37,7 +39,8 @@ function Counter() {
     setIntervalId(id);
     setTimerRunning(true);
   };
-  
+
+  // Function to stop the timer
   const stopTimer = () => {
     if (intervalId) {
       clearInterval(intervalId);
@@ -45,7 +48,8 @@ function Counter() {
     setIntervalId(null);
     setTimerRunning(false);
   };
-  
+
+  // Function to reset the timer
   const resetTimer = () => {
     setHours(0);
     setMinutes(0);
@@ -54,6 +58,7 @@ function Counter() {
     setIntervalId(null);
   };
 
+  // Function to handle Start/Stop button click
   const handleStartStopClick = () => {
     if (timerRunning) {
       stopTimer();
@@ -115,11 +120,10 @@ function Counter() {
   }, [minutes]);
 
   useEffect(() => {
-    if (seconds === 60) {
-      setSeconds(0);
-      setMinutes((minutes) => minutes + 1);
+    if (hours === 0 && minutes === 0 && seconds === 0) {
+      stopTimer();
     }
-  }, [seconds]);
+  }, [hours, minutes, seconds]);
 
   return (
     <main>
@@ -141,7 +145,7 @@ function Counter() {
               {timerRunning ? "Stop" : "Start"}
             </button>
             <button className={styles.reset_button} onClick={resetTimer}>
-              Reset
+              Reset!
             </button>
           </div>
           <div className={styles.math_button}>
