@@ -34,21 +34,23 @@ function Counter() {
         }
       });
     }, 1000);
-    //setIntervalId(id);
+    setIntervalId(id);
     setTimerRunning(true);
-  };  
-
+  };
+  
   const stopTimer = () => {
-    //clearInterval(intervalId);
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
     setIntervalId(null);
     setTimerRunning(false);
   };
-
+  
   const resetTimer = () => {
     setHours(0);
     setMinutes(0);
     setSeconds(0);
-    //clearInterval(intervalId);
+    clearInterval(intervalId);
     setIntervalId(null);
   };
 

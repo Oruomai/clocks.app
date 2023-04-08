@@ -87,18 +87,7 @@
     flex-direction: row
     width: 100%
 
-.start_button
-    width: 50%
-    height: 50px
-    background: #4831d4
-    color: #ccf381
-    font-weight: bold
-    font-size: 14px
-    border: 1px single #ccf381
-
-.start_button:hover
-    opacity: 50%
-
+.start_button,
 .reset_button
     width: 50%
     height: 50px
@@ -107,7 +96,9 @@
     font-weight: bold
     font-size: 14px
     border: 1px single #ccf381
+    cursor: pointer
 
+.start_button:hover,
 .reset_button:hover
     opacity: 50%
 
@@ -118,8 +109,12 @@
     bottom: 50px
     width: 100%
 
-
-.add_hour_button, .add_min_button, .add_sec_button
+.add_hour_button,
+.add_min_button,
+.add_sec_button,
+.subtract_hour_button,
+.subtract_min_button,
+.subtract_sec_button
     width: 16.66666%
     height: 50px
     background: #4831d4
@@ -127,12 +122,13 @@
     font-weight: bold
     font-size: 14px
     border: 1px single #ccf381
+    cursor: pointer
 
-.subtract_hour_button, .subtract_min_button, .subtract_sec_button
-    width: 16.66666%
-    height: 50px
-    background: #4831d4
-    color: #ccf381
-    font-weight: bold
-    font-size: 14px
-    border: 1px single #ccf381
+
+.add_hour_button:hover,
+.add_min_button:hover,
+.add_sec_button:hover,
+.subtract_hour_button:hover,
+.subtract_min_button:hover,
+.subtract_sec_button:hover
+    opacity: 50%
