@@ -11,11 +11,11 @@ function Digital() {
       let seconds = document.getElementById('seconds');
       let ampm = document.getElementById('ampm');
 
-      fetch('https://worldtimeapi.org/api/ip')
+      fetch(`https://api.ipgeolocation.io/timezone?apiKey=${process.env.REACT_APP_API_KEY}`)
         .then(response => response.json())
         .then(data => {
           let timezone = data.timezone;
-          let now = new Date(data.datetime);
+          let now = new Date();
           let localTime = now.toLocaleTimeString('en-US', { timeZone: timezone });
           let [time, modifier] = localTime.split(' ');
           let [h, m, s] = time.split(':');
@@ -28,11 +28,13 @@ function Digital() {
         })
         .catch(error => console.error(error));
     }
-
+  
     var interval = setInterval(clock, 1000);
-
+  
     return () => clearInterval(interval);
   }, []);
+  
+
 
   return (
     <main>

@@ -9,7 +9,7 @@ function Analog() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      fetch('https://worldtimeapi.org/api/ip')
+      fetch(`https://api.ipgeolocation.io/timezone?apiKey=${process.env.REACT_APP_API_KEY}`)
         .then(response => response.json())
         .then(data => {
           let timezone = data.timezone;
