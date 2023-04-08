@@ -50,7 +50,9 @@ function Counter() {
     setHours(0);
     setMinutes(0);
     setSeconds(0);
-    clearInterval(intervalId);
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
     setIntervalId(null);
   };
 
