@@ -87,42 +87,6 @@ function Counter() {
     setMinutes((minutes) => (minutes > 0 ? minutes - 1 : 0));
   };
 
-  const addSecond = () => {
-    setSeconds((seconds) => {
-      if (seconds < 59) {
-        return seconds + 1;
-      } else {
-        setMinutes((minutes) => {
-          if (minutes < 59) {
-            return minutes + 1;
-          } else {
-            setHours((hours) => hours + 1);
-            return 0;
-          }
-        });
-        return 0;
-      }
-    });
-  };
-
-  const subtractSecond = () => {
-    setSeconds((seconds) => (seconds > 0 ? seconds - 1 : 0));
-  };
-
-  useEffect(() => {
-    if (minutes === 60) {
-      setMinutes(0);
-      setHours((hours) => hours + 1);
-    }
-  }, [minutes]);
-
-  useEffect(() => {
-    if (seconds === 60) {
-      setSeconds(0);
-      setMinutes((minutes) => minutes + 1);
-    }
-  }, [seconds]);
-
   return (
     <main>
       <Link href="/">
@@ -157,12 +121,6 @@ function Counter() {
               +
             </button>
             <button className={styles.subtract_min_button} onClick={subtractMinute}>
-              -
-            </button>
-            <button className={styles.add_sec_button} onClick={addSecond}>
-              +
-            </button>
-            <button className={styles.subtract_sec_button} onClick={subtractSecond}>
               -
             </button>
           </div>
