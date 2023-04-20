@@ -23,11 +23,7 @@ function Analog() {
 
     return () => clearInterval(intervalId);
   }, []);
-
-  function degToRad(degrees: number): number {
-    return degrees * Math.PI / 180;
-  }
-
+  
   const hourStyle = {
     transform: `rotate(${(date.getHours() % 12) * 30 + (date.getMinutes() / 2)}deg)`
   };

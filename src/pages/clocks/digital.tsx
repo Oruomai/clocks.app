@@ -28,12 +28,12 @@ function Digital() {
         })
         .catch(error => console.error(error));
     }
-  
+
     var interval = setInterval(clock, 1000);
-  
+
     return () => clearInterval(interval);
   }, []);
-  
+
 
 
   return (
